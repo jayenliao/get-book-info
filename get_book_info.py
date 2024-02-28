@@ -9,7 +9,6 @@ Upated on 27 Feb 2024
 '''
 
 # import the packages
-import re
 import time, datetime
 import requests
 import pandas as pd
@@ -96,15 +95,18 @@ if __name__ == '__main__':
             print('Please enter either a or b.')
 
     if mode == 'a':
-        lst_ISBN = input('Please enter one or more ISBNs (please separate them with spaces): ')
+        str_ISBN = input('Please enter one or more ISBNs (please separate them with spaces): ')
+        lst_ISBN = str_ISBN.split(' ')
     elif mode == 'b':
         fn = input('Please enter the path to a file with ISBNs: ')
         if fn.endswith('.csv'):
             lst_ISBN = pd.read_csv(fn).iloc[0]
         elif fn.endswith('.txt'):
-            with open(fn, 'f') as f:
+            with open(fn, 'r') as f:
                 lst_ISBN = f.readlines()
-    lst_ISBN = [int(x) for x in lst_ISBN.split(' ')]
+        else:
+            raise ValueError('We currently support only csv and txt files.')
+    lst_ISBN = [int(x) for x in lst_ISBN]
 
     print_out = ''
     while print_out not in ['y', 'n']:
