@@ -1,6 +1,6 @@
 # get-book-info
 
-This is a small side project. The objective is to get the basic information of the book based on the given ISBN. Specifically, a web crawler based on `BeautifulSoup` is used to get the book information from the item page of [TAAZE.com ](https://www.taaze.tw/index.html), a well-known booksteller in Taiwan.
+This is a small side project. The objective is to get the basic information of the book based on the given ISBN. Specifically, a web crawler based on `BeautifulSoup` is used to get the book information from the item page of [TAAZE.com ](https://www.taaze.tw/index.html), a well-known bookseller in Taiwan.
 
 ## Files
 
